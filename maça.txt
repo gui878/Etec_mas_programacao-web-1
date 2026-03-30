@@ -1,0 +1,207 @@
+1. Arquivo: 1-estrutura.html
+HTML<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 - Estrutura Básica HTML</title>
+</head>
+<body>
+
+    <h1>Título Principal (H1)</h1>
+    <h2>Subtítulo (H2)</h2>
+    <h3>Título de nível 3 (H3)</h3>
+    <h4>Título de nível 4 (H4)</h4>
+    <h5>Título de nível 5 (H5)</h5>
+    <h6>Título de nível 6 (H6)</h6>
+
+</body>
+</html>
+
+
+
+
+
+
+2. Arquivo: 2-poema.html
+HTML<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 - Poema Ausência</title>
+</head>
+<body>
+
+    <h1>AUSÊNCIA</h1>
+    Por muito tempo achei que a ausência é falta.<br>
+    E lastimava, ignorante, a falta.<br>
+    Hoje não a lastimo.<br>
+    Não há falta na ausência.<br>
+    A ausência é um estar em mim.<br>
+    E sinto-a, branca, tão pegada, aconchegada nos meus braços,<br>
+    que rio e danço e invento exclamações alegres,<br>
+    porque a ausência, essa ausência assimilada,<br>
+    ninguém a rouba mais de mim.<br><br>
+    
+    <p><strong>Carlos Drummond de Andrade</strong></p>
+
+</body>
+</html>
+
+
+
+
+
+
+3. Arquivo: 3-musica.html
+HTML<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 - Letra de Música</title>
+</head>
+<body>
+
+    <h1>naquela mesa</h1>
+    <p>
+        .<br>
+       .<br><br>
+        
+        naquela mesa ele entava sempre e me dizia sempre oque é viver melhor,<br>
+        naquela mesa ele contava historias que hoje na memoria eu guardo e sei de cor,<br>
+        naquela mesa ele juntava a gente e contava contente oque fez de manha,<br>
+        e nos teus olhos era tanto brilho que mais que seu filho eu fiquei seu fan.<br>
+        
+    </p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+4. Arquivo: 4-listas.html
+HTML<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 - Listas</title>
+</head>
+<body>
+
+    <h1>Listas em HTML</h1>
+
+    <h2>Lista não ordenada (UL)</h2>
+    <ul>
+        <li>Livros para o ENEM</li>
+        <li>Grande Sertão: Veredas</li>
+        <li>Capitães de Areia</li>
+        <li>Manifesto da Poesia Pau-Brasil</li>
+        <li>Triste Fim de Policarpo Quaresma</li>
+        <li>Memórias Póstumas de Brás Cubas</li>
+    </ul>
+
+    <h2>Lista ordenada (OL)</h2>
+    <ol>
+        <li>Beethoven: 5th Symphony</li>
+        <li>Tchaikovsky: 1812 Overture</li>
+        <li>Mozart: Eine Kleine Nachtmusik</li>
+        <li>Bach: Toccata and Fugue</li>
+        <li>Rossini: William Tell Overture</li>
+    </ol>
+
+</body>
+</html>
+
+5. Arquivo: 5-tabela.html
+HTML<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 - Tabela Calendário</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 10px; text-align: center; }
+        th { background-color: #333; color: white; }
+        .domingo { background-color: #ff9999; }
+    </style>
+</head>
+<body>
+
+    <h1>Calendário – Setembro – 2019</h1>
+
+    <table>
+        <tr>
+            <th>Segunda</th>
+            <th>Terça</th>
+            <th>Quarta</th>
+            <th>Quinta</th>
+            <th>Sexta</th>
+            <th>Sábado</th>
+            <th>Domingo</th>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>03</td>
+            <td>04</td>
+            <td>05</td>
+            <td>06</td>
+            <td>07</td>
+            <td class="domingo">01</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="domingo">08</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+6. Arquivo: 6-formulario.html
+HTML<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 - Formulário</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        form { max-width: 400px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input { width: 100%; padding: 8px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 12px 25px; background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <h1>Formulário</h1>
+
+    <form>
+        <label for="nome">Digite Nome</label>
+        <input type="text" id="nome" placeholder="Seu nome completo">
+
+        <label for="data">Selecione a Data</label>
+        <input type="date" id="data">
+
+        <label for="arquivo">Envio de Arquivo</label>
+        <input type="file" id="arquivo">
+
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+</html>
