@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server-side vs Client-side: A Dualidade da Web</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-left: 5px solid var(--secondary);
+            padding-left: 10px;
+        }
+
+        .examples {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        code {
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
+        hr {
+            width: 100%;
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, transparent, var(--primary), transparent);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>O Grande Diálogo da Web</h1>
+        <p>Entendendo as engrenagens por trás do seu navegador.</p>
+    </header>
+
+    <main class="comparison-container">
+        
+        <section id="client-side">
+            <h2>Linguagens Client-Side</h2>
+            <p>
+                Imagine o <strong>Client-side</strong> como a "maquiagem" e o "comportamento" imediato de uma página. 
+                O código é executado diretamente no navegador do usuário (Chrome, Firefox, Safari). 
+                É responsável por tudo o que você vê, clica e interage sem precisar atualizar a página.
+            </p>
+            <div class="examples">
+                <strong>Principais Exemplos:</strong>
+                <ul>
+                    <li><code>JavaScript</code> (O rei da interatividade)</li>
+                    <li><code>HTML5</code> (Estrutura de marcação)</li>
+                    <li><code>CSS3</code> (Estilização e animações)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="server-side">
+            <h2>Linguagens Server-Side</h2>
+            <p>
+                O <strong>Server-side</strong> é o "cérebro" escondido. O código roda em um servidor remoto, 
+                longe dos olhos do usuário. Ele lida com bancos de dados, autenticação de usuários e 
+                toda a lógica de negócios complexa antes de enviar o resultado final para o seu navegador.
+            </p>
+            <div class="examples">
+                <strong>Principais Exemplos:</strong>
+                <ul>
+                    <li><code>PHP</code> (Clássico da web dinâmica)</li>
+                    <li><code>Python</code> (Famoso por Django e Flask)</li>
+                    <li><code>Node.js</code> (JavaScript rodando no servidor)</li>
+                    <li><code>Java</code> ou <code>C#</code> (Sistemas corporativos)</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <article style="max-width: 800px; text-align: center;">
+        <h3>Resumo da Diferença</h3>
+        <blockquote>
+            "O <strong>Client-side</strong> foca na experiência do usuário e interface, enquanto o 
+            <strong>Server-side</strong> foca no processamento de dados e segurança."
+        </blockquote>
+    </article>
+
+    <footer>
+        <p>&copy; 2024 - Guia de Arquitetura Web</p>
+    </footer>
+
+</body>
+</html>
