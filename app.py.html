@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML & CSS Animados</title>
+    <style>
+        /* ==========================================================================
+           1. VARIÁVEIS E CONFIGURAÇÕES GERAIS
+           ========================================================================== */
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --sunday-color: #ef4444;
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==========================================================================
+           2. LAYOUT: NAVEGAÇÃO E ESTRUTURA DE PÁGINAS
+           ========================================================================== */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px 20px;
+            gap: 10px;
+        }
+
+        /* Esconder barra de rolagem do menu no mobile */
+        nav::-webkit-scrollbar {
+            height: 0px;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            padding: 10px 18px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 8px;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .nav-btn:hover {
+            color: var(--primary-color);
+            background-color: #f1f5f9;
+        }
+
+        .nav-btn.active {
+            color: white;
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Container de Páginas */
+        .page {
+            display: none;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Estado Ativo da Página com Animação de Entrada */
+        .page.active {
+            display: block;
+            animation: fadeInSlide 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* ==========================================================================
+           3. KEYFRAMES & ANIMAÇÕES CSS
+           ========================================================================== */
+        @keyframes fadeInSlide {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes pulseFocus {
+            0% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(79, 70, 229, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        /* ==========================================================================
+           4. ESTILIZAÇÃO CUSTOMIZADA DOS EXERCÍCIOS
+           ========================================================================== */
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        /* Pág 1: Estrutura */
+        .page-estrutura h1 { color: #1e3a8a; border-bottom: 2px solid #3b82f6; padding-bottom: 5px; }
+        .page-estrutura h2 { color: #0d9488; }
+        .page-estrutura h3 { color: #b45309; }
+        .page-estrutura h4 { color: #4338ca; }
+        .page-estrutura h5 { color: #db2777; }
+        .page-estrutura h6 { color: #4b5563; }
+
+        /* Pág 2 e 3: Poema e Música */
+        .poema-box, .musica-box {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #334155;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+            margin: 20px 0;
+            background: #fcfcfd;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        
+        .autor {
+            text-align: right;
+            margin-top: 20px;
+            color: var(--text-muted);
+        }
+
+        /* Pág 4: Listas Animadas */
+        ul, ol {
+            margin: 20px 0 30px 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 5px;
+            transition: var(--transition-smooth);
+            cursor: default;
+        }
+
+        li:hover {
+            color: var(--primary-color);
+            transform: translateX(8px);
+        }
+
+        /* Pág 5: Tabela */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 25px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 14px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--text-main);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr {
+            transition: background-color 0.2s ease;
+        }
+
+        tr:hover td:not(.domingo) {
+            background-color: #f1f5f9;
+        }
+
+        td.domingo {
+            background-color: #ffeeee;
+            color: var(--sunday-color);
+            font-weight: bold;
+            transition: var(--transition-smooth);
+        }
+
+        td.domingo:hover {
+            background-color: #fecaca;
+            transform: scale(1.05);
+        }
+
+        /* Pág 6: Formulário */
+        form {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            background-color: #f8fafc;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: #fff;
+            animation: pulseFocus 0.5s ease-out;
+        }
+
+        /* Estilização do upload de arquivo */
+        input[type="file"] {
+            padding: 8px;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 30px;
+            width: 100%;
+            padding: 14px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+            transition: var(--transition-smooth);
+        }
+
+        button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu de Navegação entre Páginas/Exercícios -->
+    <header>
+        <nav role="tablist">
+            <button class="nav-btn active" onclick="switchPage('estrutura')">1. Estrutura</button>
+            <button class="nav-btn" onclick="switchPage('poema')">2. Poema</button>
+            <button class="nav-btn" onclick="switchPage('musica')">3. Música</button>
+            <button class="nav-btn" onclick="switchPage('listas')">4. Listas</button>
+            <button class="nav-btn" onclick="switchPage('tabela')">5. Tabela</button>
+            <button class="nav-btn" onclick="switchPage('formulario')">6. Formulário</button>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal Dinâmico -->
+    <main>
+
+        <!-- Página 1: Estrutura -->
+        <section id="estrutura" class="page active page-estrutura">
+            <h1>Título Principal (H1)</h1>
+            <h2>Subtítulo (H2)</h2>
+            <h3>Título de nível 3 (H3)</h3>
+            <h4>Título de nível 4 (H4)</h4>
+            <h5>Título de nível 5 (H5)</h5>
+            <h6>Título de nível 6 (H6)</h6>
+        </section>
+
+        <!-- Página 2: Poema -->
+        <section id="poema" class="page">
+            <h1>AUSÊNCIA</h1>
+            <div class="poema-box">
+                Por muito tempo achei que a ausência é falta.<br>
+                E lastimava, ignorante, a falta.<br>
+                Hoje não a lastimo.<br>
+                Não há falta na ausência.<br>
+                A ausência é um estar em mim.<br>
+            e sinto-a, branca, tão pegada, aconchegada nos meus braços,<br>
+            que rio e danço e invento exclamações alegres,<br>
+            porque a ausência, essa ausência assimilada,<br>
+            ninguém a rouba mais de mim.<br><br>
+            
+            <p class="autor"><strong>Carlos Drummond de Andrade</strong></p>
+        </section>
+
+        <!-- Página 3: Música -->
+        <section id="musica" class="page">
+            <h1>Naquela Mesa</h1>
+            <div class="musica-box">
+                Naquela mesa ele sentava sempre e me dizia sempre o que é viver melhor,<br>
+                naquela mesa ele contava histórias que hoje na memória eu guardo e sei de cor,<br>
+                naquela mesa ele juntava a gente e contava contente o que fez de manhã,<br>
+                e nos teus olhos era tanto brilho que mais que seu filho eu fiquei seu fã.<br>
+            </div>
+            <p class="autor"><strong>Nelson Gonçalves / Sérgio Bittencourt</strong></p>
+        </section>
+
+        <!-- Página 4: Listas -->
+        <section id="listas" class="page">
+            <h1>Listas em HTML</h1>
+
+            <h2>Lista não ordenada (UL)</h2>
+            <ul>
+                <li>Grande Sertão: Veredas</li>
+                <li>Capitães de Areia</li>
+                <li>Manifesto da Poesia Pau-Brasil</li>
+                <li>Triste Fim de Policarpo Quaresma</li>
+                <li>Memórias Póstumas de Brás Cubas</li>
+            </ul>
+
+            <h2>Lista ordenada (OL)</h2>
+            <ol>
+                <li>Beethoven: 5th Symphony</li>
+                <li>Tchaikovsky: 1812 Overture</li>
+                <li>Mozart: Eine Kleine Nachtmusik</li>
+                <li>Bach: Toccata and Fugue</li>
+                <li>Rossini: William Tell Overture</li>
+            </ol>
+        </section>
+
+        <!-- Página 5: Tabela -->
+        <section id="tabela" class="page">
+            <h1>Calendário – Setembro – 2019</h1>
+
+            <table>
+                <tr>
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                    <th>Sexta</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>03</td>
+                    <td>04</td>
+                    <td>05</td>
+                    <td>06</td>
+                    <td>07</td>
+                    <td class="domingo">01</td>
+                </tr>
+                <tr>
+                    <td>09</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td class="domingo">08</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Página 6: Formulário -->
+        <section id="formulario" class="page">
+            <h1>Formulário de Cadastro</h1>
+
+            <form onsubmit="event.preventDefault(); alert('Formulário enviado com sucesso!');">
+                <label for="nome">Digite Nome</label>
+                <input type="text" id="nome" placeholder="Seu nome completo" required>
+
+                <label for="data">Selecione a Data</label>
+                <input type="date" id="data" required>
+
+                <label for="arquivo">Envio de Arquivo</label>
+                <input type="file" id="arquivo" required>
+
+                <button type="submit">Enviar Dados</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ==========================================================================
+       5. JAVASCRIPT: CONTROLE DE ABAS (SPA)
+       ========================================================================== */ -->
+    <script>
+        function switchPage(pageId) {
+            // Remove a classe ativa de todas as páginas e de todos os botões
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+
+            // Ativa a página correspondente ao ID clicado
+            document.getElementById(pageId).classList.add('active');
+
+            // Localiza e ativa o botão correto do menu com base no parâmetro
+            const clickedBtn = Array.from(document.querySelectorAll('.nav-btn')).find(btn => 
+                btn.getAttribute('onclick').includes(pageId)
+            );
+            if (clickedBtn) {
+                clickedBtn.classList.add('active');
+            }
+
+            // Rola a tela suavemente para o topo do conteúdo
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
